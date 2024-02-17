@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: inline;
+            background-color: rgb(228, 236, 236);
+        }
+        .navigation{
+            /* margin-top: 0; */
+            /* overflow: hidden; */
+            position: fixed;
+            /* top: 0; */
+            /* z-index: 9999; */
+            width: 100%;
+            height: 70px;
+            background-color: black;
+        }
+        .content_1{
+            /* margin-top: 40px; */
+
+            position: relative;
+            top: 5px;
+            left: 10px;
+            width: 110px;
+            height: 55px;
+            border: 2px solid black;
+        }
+        .content_1:hover{
+            border: 1px solid aliceblue;
+            border-radius: 1px;
+        }
+        .logo img{
+            padding-top: 5px;
+            padding-left: 10px;
+            height: 50px;
+            width: 90px;
+            align-self: center;
+        }
+        .content_2{
+            position: absolute;
+            top: 5px;
+            left: 130px;
+            width: 220px;
+            height: 55px;
+            border: 2px solid black;
+            display: flex;
+        }
+        .content_2:hover{
+            border: 1px solid aliceblue;
+            border-radius: 1px;
+        }
+        .location_icon{
+            padding-top: 15px;
+            width: 27px;
+            height: 28px;
+        }
+        .location_icon img{
+            width: 27px;
+            height: 27px;
+        }
+        .location{
+            padding-top: 8px;
+            width: 190px;
+            height: 55px;
+        }
+        #aaa{
+            color: aliceblue;
+            font-family: Arial;
+            letter-spacing: 0.7px;
+            font-size: 12px;
+        }
+        #bbb{
+            padding-top: 2px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+        }
+        .content_3{
+            position: absolute;
+            top: 5px;
+            left: 360px;
+            width: 550px;
+            height: 55px;
+            border: 2px solid black;
+            display: flex;
+        }
+        /* .content_3:hover{
+            border: 1px solid aliceblue;
+            border: 1px;
+        } */
+        .btn_1{
+            margin-top: 2px;
+            width: 62px;
+            height: 47px;
+            box-sizing: none;
+            border: 2px solid orangered;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+        .srch_1{
+            margin-top: 4px;
+            width: 432px;
+            height: 43px;
+            font-size: 16px;
+            padding-left: 5px;
+            border: none;
+        }
+        .srch_1:focus{
+            outline: none;
+        }
+        .btn_3{
+            margin-top: 4px;
+            width: 50px;
+            height: 43px;
+            border-left: none;
+            background-color: rgb(246, 130, 88);
+            border: 2px solid rgb(246, 130, 88);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .btn_3 img{
+            padding-top: 3px;
+            height: 28px;
+            width: 28px;
+        }
+        .list_1{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown_content{
+            display: none;
+            position: absolute;
+            background-color: aliceblue;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .dropdown_content a{
+            margin-left: 2px;
+            margin-top: 2px;
+            padding-left: 3px;
+            border: 1px solid aliceblue;
+            border-radius: 2px;
+            color: black;
+            font-family: 'Gill Sans';
+            text-decoration: none;
+            display: block;
+        }
+        .list_1:hover .dropdown_content{
+            display: block;
+        }
+
+        .list_1 .dropdown_content a:hover{
+            background-color: rgb(182, 180, 180);
+        }
+        .content_4{
+            position: absolute;
+            top: 5px;
+            left: 918px;
+            width: 63px;
+            height: 55px;
+            border: 2px solid black;
+            display: flex;
+        }
+        .content_4:hover{
+            border: 1px solid aliceblue;
+            border-radius: 1px;
+        }
+        .www_1{
+            width: 61px;
+            height: 52px;
+            position: relative;
+        }
+        .www{
+            display: flex;
+            width: 61px;
+            height: 50px;
+        }
+        .flag img{
+            margin-top: 16px;
+            width: 25px;
+            height: 25px;
+        }
+        .language{
+            width: 35px;
+            height: 40px;
+            color: aliceblue;
+            margin-top: 20px;
+            margin-left: 2px;
+            font-family: Arial;
+            font-weight: 400;
+        }
+        .list_3{
+        
+            margin-top: 5px;
+            position: absolute;
+            display: none;
+            background-color: aliceblue;
+            width: 170px;
+            height: 225px;
+            
+        }
+
+        .list_3 li {
+            width: 165px;
+            height: 25px;
+            margin-left: 2px;
+            margin-top: 2px;
+            border-radius: 5px;
+            list-style: none;
+            padding-left: 15px;
+            padding-top: 3px;
+            
+        }
+        .list_3 li:hover{
+            background-color: rgb(182, 180, 180);
+        }
+        .list_3 li a{
+            font-size: 15px;
+            text-decoration: none;
+            color: black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .list_3 li a:hover{
+            text-decoration: none;
+        }
+        .content_4:hover .list_3{
+            display: block;
+            box-shadow: 2px 2px 3px rgb(253, 253, 252);
+        }
+        .content_5{
+            position: absolute;
+            top: 5px;
+            left: 986px;
+            width: 128px;
+            height: 55px;
+            border: 2px solid black;
+            display: flex;
+        }
+        .content_5:hover{
+            border: 1px solid aliceblue;
+            border-radius: 1px;
+        }
+        .sign_in{
+            padding-top: 10px;
+            padding-left: 2px;
+            width: 125px;
+            height: 45px;
+        }
+        #ccc{
+            /* padding-left: 10px; */
+            color: aliceblue;
+            font-family: Arial;
+            letter-spacing: 0.7px;
+            font-size: 13px;
+        }
+        #ddd{
+            padding-top: 2px;
+            font-size: 13px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+        }
+        .content_6{
+            position: absolute;
+            top: 5px;
+            left: 1120px;
+            width: 80px;
+            height: 55px;
+            border: 2px solid black;
+            display: flex;
+        }
+        .content_6:hover{
+            border: 1px solid aliceblue;
+            border-radius: 1px;
+        }
+        .return{
+            padding-top: 10px;
+            padding-left: 2px;
+            width: 75px;
+            height: 45px;
+        }
+        .content_7{
+            position: absolute;
+            top: 5px;
+            left: 1205px;
+            width: 75px;
+            height: 55px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .content_7:hover{
+            border: 1px solid aliceblue;
+            border-radius: 1px;
+        }
+        .cart img{
+            width: 70px;
+            height: 51px;
+        }
+        .menu_bar{
+            /* overflow: auto; */
+            margin-top: 70px;
+            width: 100%;
+            height: 40px;
+            background-color: rgb(74, 73, 73);
+            display: flex;
+        }
+        .list_2 li{
+            /* margin-top: 5px; */
+            float: left;
+            display: inline;
+            width: auto;
+            height: 40px;
+            /* padding-left: 11px; */
+            /* padding-top: 19px; */
+            padding: 12px 8px 11px 8px;
+            font-size: 14px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /* border: 1px solid orangered; */
+        }
+        .list_2 li a{
+            padding-top: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .list_2 li:hover{
+            border: 1.5px solid rgb(250, 249, 249);
+        }
+        .part_2{
+            display: flex;
+            margin-left: 25px;
+            width: 380px;
+            height: 39px;
+            /* border: 1px solid blue; */
+        }
+        .app_logo img{
+            margin-top: 2px;
+            margin-left: 3px;
+            width: 33px;
+            height: 33px;
+            border-radius: 6px;
+        }
+        .intro{
+            padding-top: 7px;
+            padding-left: 7px;
+            color: white;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-shadow: 0.5px 0.5px 0.5px white;
+        }
+        .part_2:hover{
+            border: 1.5px solid white;
+        }
+        .part_2 a{
+            text-decoration: none;
+            color: white;
+        }
+        .section_1 img{
+            width: 100%;
+            height: auto;
+        }
+        .section_2{
+            margin-top: 10px;
+            width: 100%;
+            height: 500px;
+            display: flex;
+        }
+
+        .sectn_a{
+            /* float: left; */
+            width: 298px;
+            height: 470px;
+            background-color: white;
+            margin-left: 17px;
+        }
+        .part_a{
+            width: 275px;
+            height: 70px;
+            font-size: 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: bold;
+            margin-top: 10px;
+            padding-left: 16px;
+            padding-top: 10px;
+        }
+        .part_b{
+            margin-top: 10px;
+            width: 268px;
+            height: 108px;
+            display: flex;
+        }
+        .part_b img{
+            float: left;
+            padding-left: 16px;
+            width: 140px;
+            height: 103px;
+        }
+        .part_c {
+            display: flex;
+            float: left;
+            /* padding-left: 16px; */
+            width: 298px;
+            height: 50px;
+        }
+        .part_c a{
+            color: black;
+        }
+        #in_1{
+            display: flex;
+            /* margin-left: 4px; */
+            float: left;
+            padding-left: 16px;
+            width: 140px;
+            height: 50px;
+            font-size: 11.5px;
+            /* border: 1px solid orangered; */
+        }
+        .part_d{
+            width: 260px;
+            height: 30px;
+            margin-left: 16px;
+        }
+        .part_d a{
+            color: rgb(25, 86, 113);
+            text-decoration: none;
+            font-size: 12px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .part_d a:hover{
+            color: purple;
+            text-decoration: none;
+        }
+        .sectn_b{
+            width: 298px;
+            height: 470px;
+            background-color: rgb(228, 236, 236);
+            margin-left: 17px;
+        }
+        .part_e{
+            width: 298px;
+            height: 160px;
+            background-color: white;
+        }
+        .si{
+            width: 260px;
+            height: 90px;
+        }
+        #a121_a{
+            padding-top: 20px;
+            padding-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .a121_b{
+            margin-top: 10px;
+            width: 280px;
+            height: 50px;
+        }
+        .btn_4{
+            margin-left: 25px;
+            width: 240px;
+            height: 30px;
+            background-color: rgb(242, 242, 3);
+            border: none;
+            border-radius: 6px;
+        }
+        .btn_4:hover{
+            background-color: rgb(163, 163, 5);
+        }
+        .part_f{
+            margin-top: 28px;
+            width: 298px;
+            height: 280px;
+        }
+        .part_f img{
+            width: 298px;
+            height: 280px;
+        }
+        .section_3{
+            width: 100%;
+            height: 183px;
+            background-color: white;
+        }
+        .sectn_c{
+            width: 100%;
+            height: 40px;
+            color: rgb(41, 88, 130);
+            padding-top: 23px;
+            /* border: 1px solid rgb(23, 127, 217); */
+        }
+        .sectn_c hr{
+            border: 1px solid rgb(212, 216, 216);
+        }
+        .sectn_d{
+            margin: auto;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+        .last_a{
+            font-size: 14px;
+            padding-top: 25px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            letter-spacing: 0.7px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+        }
+        .btn_5{
+            margin-top: 4px;
+            /* padding-top: 5px; */
+            width: 260px;
+            height: 25px;
+            background-color: rgb(207, 207, 22);
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn_5:hover{
+            background-color: rgb(239, 239, 10);
+        }
+        .last_b{
+            font-size: 12px;
+            padding-top: 2px;
+            /* padding-top: 25px; */
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            letter-spacing: 0.7px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+        }
+        .last_a_1 a{
+            color: blue;
+            text-decoration: none;
+        }
+        .sectn_e{
+            margin-top: 20px;
+        }
+        .sectn_e hr{
+            border: 1px solid rgb(212, 216, 216);
+        }
+        .section_4{
+            width: 100%;
+            height: 40px;
+            background-color: rgb(99, 99, 129);
+            text-align: center;
+            padding-top: 10px;
+            padding-top: auto;
+        }
+        .section_4 a{
+            color: aliceblue;
+            font-size: 14px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-decoration: none;
+        }
+        .section_4 a:hover{
+            text-shadow: 1px 1px 1px rgb(195, 214, 230);
+            font-weight: bold;
+        }
+        .section_5{
+            width: 100%;
+            height: 350px;
+            background-color: rgb(46, 43, 67);
+            /* display: flex; */
+            /* text-align: center; */
+        }
+        .section_5_1{
+            width: 1100px;
+            height: 345px;
+            margin-left: 100px;
+            display: flex;
+        }
+        .section_5_a{
+            width: 250px;
+            height: 342px;
+            /* border: 2px solid orangered; */
+            margin-left: 30px;
+            margin-top: 50px;
+            /* display: flex; */
+        }
+        .aqaq li{
+            color: aliceblue;
+            list-style: none;
+            padding-top: 8px;
+            padding-right: 30px;
+            /* font-weight: bold; */
+        }
+        .aqaq li .asas{
+            font-weight: bold;
+            text-overflow: ellipsis;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px
+        }
+        .aqaq li a{
+            color: rgb(226, 226, 226);
+            text-decoration: none;
+            font-size: 13px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .aqaq li a:hover{
+            text-decoration: underline;
+        }
+        .section_6{
+            width: 100%;
+            height: 180px;
+            border-top: 1px solid rgb(98, 98, 106);
+            background-color: rgb(46, 43, 67);
+        }
+        .section_6_a{
+            width: 100%;
+            height: 90px;
+            display: flex;
+        }
+        .section_6_a img{
+            width: 110px;
+            height: 30px;
+            margin-top: 40px;
+            margin-left: 450px;
+        }
+        .section_6_a p{
+            color: aliceblue;
+        }
+        .box_2{
+            width: 105px;
+            height: 35px;
+            margin-top: 30px;
+            margin-left: 120px;
+            padding-top: 7px;
+            border-radius: 4px;
+            border: 1px solid aliceblue;
+            text-align: center;
+            /* padding-top: 30px; */
+        }
+        .country{
+            margin-left: 235px;
+            text-align: center;
+        }
+        .country a{
+            padding-left: 5px;
+            color: aliceblue;
+            text-align: center;
+            font-size: 12px;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .country a:hover{
+            text-decoration: underline;
+        }
+        .section_7{
+            width: 100%;
+            height: 310px;
+        }
+        .section_7 .audio img{
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 1240px;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <div class="content_1">
+            <div class="logo">
+                <a href="#"><img src="/images/Amazon-logo.jpg"></a>
+            </div>
+        </div>
+        <div class="content_2">
+            <div class="location_icon">
+                <img src="/images/navigation.png">
+            </div>
+            <div class="location">
+                <p id="aaa">Delivering to lucknow 225634</p>
+                <p id="bbb">Update location</p>
+            </div>
+        </div>
+        <div class="content_3">
+            <div class="list_1">
+                <button class="btn_1">All</button>
+                <div class="dropdown_content">
+                    <a href="#">All categoreis</a>
+                    <a href="#">Alexa skill</a>
+                    <a href="#">Amazon device</a>
+                    <a href="#">Amazon fashion</a>
+                    <a href="#">Amazon fresh</a>
+                    <a href="#">Amazon pharmacy</a>
+                    <a href="#">Appliances</a>
+                    <a href="#">Apps and Game</a>
+                    <a href="#">Audible audio book</a>
+                    <a href="#">Books</a>
+                    <a href="#">Baby</a>
+                    <a href="#">Beuty</a>
+                </div>
+            </div>
+            <input class="srch_1" type="search" placeholder="Search Amazon.in">
+            <button class="btn_3"><img src="/images/search.png"></button>
+        </div>
+        <div class="content_4">
+            <div class="www_1">
+                <div class="www">
+                    <div class="flag">
+                        <img src="/images/india.png">
+                    </div>
+                    <div class="language">
+                        <p>EN</p>
+                    </div>
+                </div>
+                <div class="list_3">
+                    <ul class="li_3">
+                        <li><a href="#">Hindi</a></li>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">French</a></li>
+                        <li><a href="#">Bhojpuri</a></li>
+                        <li><a href="#">Arabic</a></li>
+                        <li><a href="#">Russian</a></li>
+                        <li><a href="#">Korean</a></li>
+                        <li><a href="#">Japanese</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content_5">
+            <div class="sign_in">
+                <p id="ccc">Hello, sign in</p>
+                <p id="ddd">Account & Lists</p>
+            </div>
+        </div>
+        <div class="content_6">
+            <div class="return">
+                <p id="ccc">Returns</p>
+                <p id="ddd">& Orders</p>
+            </div>
+        </div>
+        <div class="content_7">
+            <div class="cart">
+                <a href="#"><img src="/images/shopping_logo.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="menu_bar">
+        <div class="to_go">
+            <ul class="list_2">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Fresh</a></li>
+                <li><a href="#">Amazon miniTV</a></li>
+                <li><a href="#">Sell</a></li>
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">Today's Deal</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">New Release</a></li>
+            </ul>
+        </div>
+        <div class="part_2">
+            <div class="app_logo">
+                <a href="#"><img src="/images/amazon_app_logo.jpeg"></a>
+            </div>
+            <div class="intro">
+                <a href="#"><p class="download_app">Shopping made easy | Download the app</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="section_1">
+        <img src="/images/amazon_pic_1.png">
+    </div>
+    <div class="section_2">
+        <div class="sectn_a">
+            <div class="part_a">
+                <p class="offer_1">Up to 70% off |<br>Headphones</p>
+            </div>
+            <div class="part_b">
+                <a href="%"><img src="/images/amazon_pic_2.png"></a>
+                <a href="#"><img src="/images/amazon_pic_3.png"></a>
+                
+            </div>
+            <div class="part_c">
+                <a href="#"><p id="in_1">Upto 70% off | boAt</p></a>
+                <a href="#"><p id="in_1">Upto 70% off | boult</p></a>
+            </div>
+            <div class="part_b">
+                <a href="#"><img src="/images/amazon_pic_6.png"></a>
+                <a href="#"><img src="/images/amazon_pic_7.png"></a>
+            </div>
+            <div class="part_c">
+                <a href="#"><p id="in_1">Upto 70% off | Noise</p></a>
+                <a href="#"><p id="in_1">Upto 70% off | <br>Zebronics</p></a>
+            </div>
+            <div class="part_d">
+                <a href="#">See all offer</a>
+            </div>
+        </div>
+        <div class="sectn_a">
+            <div class="part_a">
+                <p class="offer_2">Up to 60% off | Style for men</p>
+            </div>
+            <div class="part_b">
+                <a href="#"><img src="/images/amazon_pic_11.png"></a>
+                <a href="#"><img src="/images/amazon_pic_12.png"></a>
+            </div>
+            <div class="part_c">
+                <a href="#"><p id="in_1">Clothing</p></a>
+                <a href="#"><p id="in_1">Footwear</p></a>
+            </div>
+            <div class="part_b">
+                <a href="#"><img src="/images/amazon_pic_10.png"></a>
+                <a href="#"><img src="/images/amazon_pic_13.png"></a>
+            </div>
+            <div class="part_c">
+                <a href="#"><p id="in_1">Watches</p></a>
+                <a href="#"><p id="in_1">Bags & Wallets</p></a>
+            </div>
+            <div class="part_d">
+                <a href="#">End of season sale</a>
+            </div>
+        </div>
+        <div class="sectn_a">
+            <div class="part_a">
+                <p class="offer_2">Revamp your home in<br>style</p>
+            </div>
+            <div class="part_b">
+                <a href="#"><img src="/images/amazon_pic_4.png"></a>
+                <a href="#"><img src="/images/amazon_pic_5.png"></a>
+            </div>
+            <div class="part_c">
+                <a href="#"><p id="in_1">Cushion cover,<br>bedsheets & more</p></a>
+                <a href="#"><p id="in_1">Vashes decor and<br>more</p></a>
+            </div>
+            <div class="part_b">
+                <a href="#"><img src="/images/amazon_pic_8.png"></a>
+                <a href="#"><img src="/images/amazon_pic_9.png"></a>
+            </div>
+            <div class="part_c">
+                <a href="#"><p id="in_1">Home storage</p></a>
+                <a href="#"><p id="in_1">Lighting solutions</p></a>
+            </div>
+            <div class="part_d">
+                <a href="#">Explore all</a>
+            </div>
+        </div>
+        <div class="sectn_b">
+            <div class="part_e">
+                <div class="si">
+                    <p id="a121_a">Sign in for your best <br>experience</p>
+                </div>
+                <div class="a121_b">
+                    <button class="btn_4" type="submit">Sign in securely</button>
+                </div>
+            </div>
+            <div class="part_f">
+                <img src="/images/amazon_pic_14.png">
+            </div>
+        </div>
+    </div>
+    <div class="section_2">
+        <div class="sectn_a">
+            <div class="part_a">
+                <p class="offer_1">Get the perfect screen<br>size | TVs starts $299</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_15.png">
+                <img src="/images/amazon_pic_16.png">
+                
+            </div>
+            <div class="part_c">
+                <p id="in_1">Budget tvs | Upto <br>60% off</p>
+                <p id="in_1">4k TV | Upto 12<br>month no Cost EMI</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_17.png">
+                <img src="/images/amazon_pic_18.png">
+            </div>
+            <div class="part_c">
+                <p id="in_1">Big screen | Upto<br>60% off</p>
+                <p id="in_1">Ultra premium TVs |<br>Upto 50% off</p>
+            </div>
+            <div class="part_d">
+                <a href="#">See all offer</a>
+            </div>
+        </div>
+        <div class="sectn_a">
+            <div class="part_a">
+                <p class="offer_1">Toys and Game |<br>Amazon brands</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_19.png">
+                <img src="/images/amazon_pic_20.png">
+                
+            </div>
+            <div class="part_c">
+                <p id="in_1">Minimum 50% off |<br>bikes,truck,...</p>
+                <p id="in_1">starting $99 |<br>Sports & outdoors..</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_21.png">
+                <img src="/images/amazon_pic_22.png">
+            </div>
+            <div class="part_c">
+                <p id="in_1">Starting $49 | Soft<br>Toys</p>
+                <p id="in_1">Minimum 40% off |<br>Indoors game</p>
+            </div>
+            <div class="part_d">
+                <a href="#">See more</a>
+            </div>
+        </div>
+        <div class="sectn_a">
+            <div class="part_a">
+                <p class="offer_1">Appliances for your<br>home. Upto 50% off</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_23.png">
+                <img src="/images/amazon_pic_30.png">
+                
+            </div>
+            <div class="part_c">
+                <p id="in_1">Air Conditioners</p>
+                <p id="in_1">Refrigerators</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_24.png">
+                <img src="/images/amazon_pic_25.png">
+            </div>
+            <div class="part_c">
+                <p id="in_1">Microwaves</p>
+                <p id="in_1">Washing Machine</p>
+            </div>
+            <div class="part_d">
+                <a href="#">See more</a>
+            </div>
+        </div>
+        <div class="sectn_a">
+            <div class="part_a">
+                <p class="offer_1">Starting $99 | Amazon<br>brands & more</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_26.png">
+                <img src="/images/amazon_pic_27.png">
+                
+            </div>
+            <div class="part_c">
+                <p id="in_1">Starting $89 | Water<br>Bottles</p>
+                <p id="in_1">Starting $199 | Storage<br>Containers</p>
+            </div>
+            <div class="part_b">
+                <img src="/images/amazon_pic_28.png">
+                <img src="/images/amazon_pic_29.png">
+            </div>
+            <div class="part_c">
+                <p id="in_1">Startng $149 | <br>Kitchens tools</p>
+                <p id="in_1">Starting $499 | <br>Racks and holders</p>
+            </div>
+            <div class="part_d">
+                <a href="#">See more</a>
+            </div>
+        </div>
+    </div>
+    <div class="section_7">
+        <div class="audio">
+            <img src="/images/amazon_pic_31.png">
+        </div>
+    </div>
+    <div class="section_3">
+        <div class="sectn_c">
+            <hr>
+        </div>
+        <div class="sectn_d">
+            <p class="last_a">See personalized recommendation</p>
+            <button class="btn_5" type="button" >Sign in</button>
+            <p class="last_b">New customer? <span class="last_a_1"><a href="#">Start here</a></span></p><br>
+        </div>
+        <div class="sectn_e">
+            <hr>
+        </div>
+    </div>
+    <div class="section_4">
+        <p class="back"><a href="#">Back to top</a></p>
+    </div>
+    <div class="section_5">
+        <div class="section_5_1">
+        <div class="section_5_a">
+            <ul class="aqaq">
+            <li><p class="asas">Get to Know us</p></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press release</a></li>
+            <li><a href="#">Amazon sceince</a></li>
+            </ul>
+        </div>
+        <div class="section_5_a">
+            
+            <ul class="aqaq">
+            <li><p class="asas">Connect with us</p></li>
+            <li><a href="#">FaceBook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagam</a></li>
+            </ul>
+            
+        </div>
+        <div class="section_5_a">
+            <ul class="aqaq">
+            <li><p class="asas">Make money with us</p></li>
+            <li><a href="#">Sell on Amazon</a></li>
+            <li><a href="#">Sell under Amazon Accelerator</a></li>
+            <li><a href="#">Protect and Build Your Brand</a></li>
+            <li><a href="#">Amazon Global Selling</a></li>
+            <li><a href="#">Become an Affiliate</a></li>
+            <li><a href="#">Fulfilment by Amazon</a></li>
+            <li><a href="#">Advertise Your Products</a></li>
+            <li><a href="#">Amazon Pay on Merchants</a></li>
+            </ul>
+        </div>
+        <div class="section_5_a">
+            <ul class="aqaq">
+            <li><p class="asas">Let Us Help You</p></li>
+            <li><a href="#">COVID-19 and Amazon</a></li>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Returns Centre</a></li>
+            <li><a href="#">100% Purchase Protection</a></li>
+            <li><a href="#">Amazon App Download</a></li>
+            <li><a href="#">Help</a></li>
+            </ul>
+            
+        </div>
+        </div>
+    </div>
+    <div class="section_6">
+        <div class="section_6_a">
+            <img src="/images/amazon_logo_2.png">
+            <p class="box_2">English</p>
+        </div>
+        <div class="section_6_a">
+            <p class="country">
+                <a href="#">Australia</a>
+                <a href="#">Brazil</a>
+                <a href="#">Canada</a>
+                <a href="#">China</a>
+                <a href="#">France</a>
+                <a href="#">Germany</a>
+                <a href="#">Italy</a>
+                <a href="#">Japan</a>
+                <a href="#">Mexico</a>
+                <a href="#">Netherlands</a>
+                <a href="#">Poland</a>
+                <a href="#">Singapore</a>
+                <a href="#">Spain</a>
+                <a href="#">Turkey</a>
+                <a href="#">United Arab Emirates</a><br>
+                <a href="#">United Kingdom</a>
+                <a href="#">United States</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
